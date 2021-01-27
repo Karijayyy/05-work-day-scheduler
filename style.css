@@ -69,11 +69,10 @@ body {
     font-size: 20px;
     transition: all .3s ease-in-out;
   }
- /* /*
-  .container {
-      display: grid;
-      grid-template-columns: 1;
-      grid-template-rows: 8;
-      height: 100%;
 
-  } */
+  .container {
+    display: grid;
+    grid-template-columns: 3;
+    grid-template-rows: 8;
+    height: 100%;
+}
