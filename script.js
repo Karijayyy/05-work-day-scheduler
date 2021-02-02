@@ -1,11 +1,10 @@
 // using moment.js
 // create variables
-let today = moment().format("MM DD YY");
-let dayOfWeek = moment().format('dddd');
 let currentHour = moment().hour();
+let dayOfWeek = moment().format('dddd');
+let today = moment().format("MM DD YY");
 let ToDoListArray = [];
 
-// Dom event
 $("#currentDay").text(dayOfWeek + ' ' + today);
 
 // create functions changing colors 
@@ -21,6 +20,7 @@ for (i = 9; i < 18; i++) {
 // saves array 
 $('.save').on('click', function () {
     toDoListArray = [];
+    console.log("toDoLisArray")
 
     for (i = 9; i < 18; i++) {
         let todoValue = $('#' + i).val();
@@ -31,8 +31,9 @@ $('.save').on('click', function () {
         }
 
         toDoListArray.push(todoObject);
-
+// adds response to local storage
         localStorage.setItem("todo", JSON.stringify(toDoListArray));
+        // console.log(localStorage)
     }
 })
 // clear out local storage
@@ -50,9 +51,6 @@ function loadTodo() {
             $('#' + storedTodo[i].todoHour).val(storedTodo[i].todoItem);
         };
     }
+    // console.log(loadToDoList)
 }
-loadToDoList();
-    
-
-
-
+loadTodo();
